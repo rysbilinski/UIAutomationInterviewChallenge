@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{64117DB4-A990-4E89-ABAF-194A5DCCC1FE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TrabbleDemo</RootNamespace>
+    <AssemblyName>TrabbleDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\ConfigurationData.cs" />
+    <Compile Include="PageObjects\Actions\BaseActions.cs" />
+    <Compile Include="PageObjects\Actions\Community\LandingPageActions.cs" />
+    <Compile Include="PageObjects\Actions\Community\SearchPageActions.cs" />
+    <Compile Include="PageObjects\Actions\DesignFilePageActions.cs" />
+    <Compile Include="PageObjects\Actions\LoginPopUpActions.cs" />
+    <Compile Include="PageObjects\Actions\SignUpPopUpActions.cs" />
+    <Compile Include="PageObjects\Actions\TellUsAboutYourSelfPopUpActions.cs" />
+    <Compile Include="PageObjects\Actions\UserLandingPageActions.cs" />
+    <Compile Include="PageObjects\Actions\VerifyEmailPopUpActions.cs" />
+    <Compile Include="PageObjects\Actions\WelcomePageActions.cs" />
+    <Compile Include="PageObjects\Actions\WelcomePopUpActions.cs" />
+    <Compile Include="PageObjects\Locators\Community\LandingPageUI.cs" />
+    <Compile Include="PageObjects\Locators\Community\SearchPageUI.cs" />
+    <Compile Include="PageObjects\Locators\DesignFilePageUI.cs" />
+    <Compile Include="PageObjects\Locators\LoginPopUpUI.cs" />
+    <Compile Include="PageObjects\Locators\SignUpPopUpUI.cs" />
+    <Compile Include="PageObjects\Locators\TellUsAboutYourSelfPopUpUI.cs" />
+    <Compile Include="PageObjects\Locators\UserLandingPageUI.cs" />
+    <Compile Include="PageObjects\Locators\VerifyEmailPopUpUI.cs" />
+    <Compile Include="PageObjects\Locators\WelcomePageUI.cs" />
+    <Compile Include="PageObjects\Locators\WelcomePopUpUI.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCases\BaseTest.cs" />
+    <Compile Include="TestCases\CreateAndUpdateDesignFileTCs.cs" />
+    <Compile Include="TestCases\LoginTCs.cs" />
+    <Compile Include="TestCases\RegisterTCs.cs" />
+    <Compile Include="TestCases\SearchCommunityTemplatesTCs.cs" />
+    <Compile Include="Utils\MailUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack">
+      <Version>1.11.42</Version>
+    </PackageReference>
+    <PackageReference Include="MailSystem.NET">
+      <Version>2.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeCoverage">
+      <Version>16.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk">
+      <Version>16.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Playwright.NUnit">
+      <Version>1.22.0</Version>
+    </PackageReference>
+    <PackageReference Include="NUnit">
+      <Version>3.13.3</Version>
+    </PackageReference>
+    <PackageReference Include="NUnit3TestAdapter">
+      <Version>4.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="NUnitTestAdapter">
+      <Version>2.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Text.Json">
+      <Version>6.0.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
